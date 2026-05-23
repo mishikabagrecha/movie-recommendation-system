@@ -117,7 +117,7 @@ new_df["tag"]=new_df["tag"].apply(stem) # here we have applied stemming to the t
 # distance is inverse of similarity, so smaller the distance more similar the movies are
 
 from sklearn.metrics.pairwise import cosine_similarity
-similarity= cosine_similarity(vectors)
+similarity = cosine_similarity(vectors).astype('float32')
 print(similarity.shape)
 # (4806,4806) because we have 4806 movies and we are calculating the similarity between each movie with every other movie
 
